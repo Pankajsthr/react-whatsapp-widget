@@ -10,6 +10,7 @@ export default function WhatsAppWidget({
   companyName = 'Support',
   sendButton = 'Send',
   placeholder = 'Type a message',
+  inputMessage = 'Hi!',
   phoneNumber
 }) {
   return (
@@ -21,6 +22,7 @@ export default function WhatsAppWidget({
           phoneNumber={phoneNumber}
           sendButton={sendButton}
           placeholder={placeholder}
+          inputMessage={inputMessage}
           message={message}
         />
         <WhatsAppButton />
