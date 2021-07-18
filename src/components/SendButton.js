@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './SendButton.module.css'
 
-export default function SendButton({ sendButton, phoneNumber, placeholder }) {
+export default function SendButton({ sendButton, phoneNumber, placeholder, inputMessage }) {
   const [message, setMessage] = useState('')
 
   const handleSend = () => {
@@ -9,7 +9,7 @@ export default function SendButton({ sendButton, phoneNumber, placeholder }) {
       window.alert('Invalid Phone Number')
       return false
     }
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`)
+    window.open(`https://wa.me/${phoneNumber}?text=${inputMessage}`)
     setMessage('')
   }
 
@@ -23,7 +23,7 @@ export default function SendButton({ sendButton, phoneNumber, placeholder }) {
         placeholder={placeholder}
         className={styles.input}
         onChange={handleChange}
-        value={message}
+        value={inputMessage}
       />
       <button className={styles.button} onClick={handleSend}>
         {sendButton}
